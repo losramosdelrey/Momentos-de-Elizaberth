@@ -37,15 +37,16 @@ if (form) {
     const email = document.getElementById('email')?.value || '';
     const phone = document.getElementById('phone')?.value || '';
     const msg = document.getElementById('message')?.value || '';
-    let text = `Hola Momentos! 👋\n\n*Nombre:* ${name}\n*Email:* ${email}`;
-    if (phone) text += `\n*Teléfono:* ${phone}`;
-    text += `\n\n*Mensaje:*\n${msg}`;
-    window.open(`https://wa.me/17868266446?text=${encodeURIComponent(text)}`, '_blank');
+    const en = document.documentElement.lang === 'en';
+    let text = en ? `Hello Momentos! 👋\n\n*Name:* ${name}\n*Email:* ${email}` : `Hola Momentos! 👋\n\n*Nombre:* ${name}\n*Email:* ${email}`;
+    if (phone) text += `\n*${en ? 'Phone' : 'Teléfono'}:* ${phone}`;
+    text += `\n\n*${en ? 'Message' : 'Mensaje'}:*\n${msg}`;
+    window.open(`https://wa.me/17868266446?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
     form.reset();
     const btn = form.querySelector('button[type="submit"]');
     if (btn) {
       const orig = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
+      btn.innerHTML = '<i class="fas fa-check"></i> ' + (en ? 'Sent!' : '¡Enviado!');
       setTimeout(() => btn.innerHTML = orig, 2500);
     }
   });
