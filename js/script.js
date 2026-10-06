@@ -9,7 +9,7 @@ const backTop = document.getElementById('back-top');
 window.addEventListener('scroll', () => {
   if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 40);
   if (backTop) backTop.classList.toggle('visible', window.scrollY > 400);
-});
+}, { passive: true });
 
 if (hamburger && navLinks) {
   hamburger.addEventListener('click', () => {
@@ -58,7 +58,8 @@ console.log('%c🏠 Momentos', 'font-size:22px;font-weight:bold;color:#0d9488;')
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduce) {
     document.querySelectorAll('.hero-bg, .cta-banner').forEach((box) => {
-      for (let i = 0; i < 16; i++) {
+      const total = innerWidth < 768 ? 6 : 10;
+      for (let i = 0; i < total; i++) {
         const b = document.createElement('span');
         const s = 8 + Math.random() * 34;
         b.className = 'bubble';

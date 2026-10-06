@@ -169,7 +169,7 @@ button { border:none; background:none; cursor:pointer; font-family:inherit; }
 }
 .hero-bg {
   position:absolute; inset:0; z-index:0;
-  background: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&q=80') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1400&q=75') center/cover no-repeat;
 }
 .hero-bg::after {
   content:''; position:absolute; inset:0;
@@ -655,3 +655,15 @@ button { border:none; background:none; cursor:pointer; font-family:inherit; }
   .contact-form { padding:24px 18px; }
   .svc-pill { font-size:.8rem; padding:8px 12px; }
 }
+
+/* ===== Título "Momentos" y titulares con el degradado del icono (logo) ===== */
+.logo-text, .logo-gradient {
+  background-image:linear-gradient(135deg,#00b8e6,#f97316);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
+}
+.logo-text .accent { background:none; }
+.navbar .logo-text, .logo-gradient { filter:drop-shadow(0 1px 0 rgba(3,58,85,.7)) drop-shadow(0 0 8px rgba(3,58,85,.35)); }
+.footer .logo-text { filter:none; }
+.map-head { margin:64px 0 28px; }
+.map-head .section-title { margin-bottom:0; }
