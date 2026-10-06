@@ -667,3 +667,9 @@ button { border:none; background:none; cursor:pointer; font-family:inherit; }
 .footer .logo-text { filter:none; }
 .map-head { margin:64px 0 28px; }
 .map-head .section-title { margin-bottom:0; }
+
+/* ===== Colores solicitados ===== */
+.navbar .logo-text, .navbar .logo-text .accent { background-image:none; filter:none; color:#004c72; -webkit-text-fill-color:#004c72; }
+.c-ice { color:#b5e5fd; -webkit-text-fill-color:#b5e5fd; text-shadow:0 2px 12px rgba(3,58,85,.35); }
+.hero-title, .hero-title span { color:#d5f1ff; opacity:1; }
+.spa-banner { min-height:420px; }
