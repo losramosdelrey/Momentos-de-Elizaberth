@@ -52,3 +52,35 @@ if (form) {
 }
 
 console.log('%c🏠 Momentos', 'font-size:22px;font-weight:bold;color:#0d9488;');
+
+// ===== Efectos: burbujas, barra de progreso, brillo que sigue al cursor =====
+(function () {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) {
+    document.querySelectorAll('.hero-bg, .cta-banner').forEach((box) => {
+      for (let i = 0; i < 16; i++) {
+        const b = document.createElement('span');
+        const s = 8 + Math.random() * 34;
+        b.className = 'bubble';
+        b.style.cssText = `left:${Math.random() * 100}%;width:${s}px;height:${s}px;animation-duration:${9 + Math.random() * 10}s;animation-delay:-${Math.random() * 14}s;--dx:${(Math.random() - 0.5) * 80}px`;
+        box.appendChild(b);
+      }
+    });
+  }
+  const bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  document.body.appendChild(bar);
+  const upd = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+  };
+  addEventListener('scroll', upd, { passive: true });
+  upd();
+  document.querySelectorAll('.amenity-card, .room-card').forEach((c) =>
+    c.addEventListener('pointermove', (e) => {
+      const r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', e.clientX - r.left + 'px');
+      c.style.setProperty('--my', e.clientY - r.top + 'px');
+    })
+  );
+})();
