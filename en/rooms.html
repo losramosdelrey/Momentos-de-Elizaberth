@@ -8,11 +8,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <meta name="theme-color" content="#00b8e6">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/png" href="../icons/icon-192.png">
+  <link rel="apple-touch-icon" href="../icons/icon-192.png">
 </head>
 <body>
   <nav class="navbar scrolled" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span> Moment<span class="accent">os</span></a>
+      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span><span class="logo-text">Moment<span class="accent">os</span></span></a>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="rooms.html" class="nav-link active">Rooms</a></li>
@@ -24,9 +28,10 @@
           <a href="../habitaciones.html" class="lang-btn"><span class="flag-es"></span> ES</a>
           <a href="rooms.html" class="lang-btn active"><span class="flag-us"></span> EN</a>
         </div>
-        <a href="https://wa.me/17868266446" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <button type="button" class="nav-app" data-install aria-label="Download App"><i class="fas fa-download"></i><span>Download App</span></button>
+        <a href="https://wa.me/17868266446" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
-      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <section class="rooms" style="padding-top:140px;">
@@ -67,14 +72,14 @@
   </div></div></section>
   <footer class="footer"><div class="container">
     <div class="footer-content">
-      <div><a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span> Moment<span class="accent">os</span></a><p class="footer-slogan">Live moments that stay with you.</p></div>
+      <div><a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span><span class="logo-text">Moment<span class="accent">os</span></span></a><p class="footer-slogan">Live moments that stay with you.</p></div>
       <div><h4>Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="rooms.html">Rooms</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h4>Services</h4><ul><li>Pool</li><li>Meals & Drinks</li><li>Billiards</li><li>Room service</li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="services.html#bar">Pool Bar</a></li><li><a href="services.html#food">Cuban Food</a></li><li><a href="services.html#pool">Bar · Billiards · Pool</a></li><li><a href="services.html#sound">Sound</a></li><li><a href="services.html#tv">TV</a></li><li><a href="services.html#wifi">WiFi</a></li><li><a href="services.html#spa">Spa</a></li></ul></div>
       <div class="footer-contact"><h4>Contact</h4><p><i class="fab fa-whatsapp"></i> +1 (786) 826-6446</p><p><i class="fas fa-mobile-alt"></i> +53 55090405</p><p><i class="fas fa-envelope"></i> momentos@gmail.com</p>
         <div class="social-links" style="margin-top:14px;"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fab fa-instagram"></i></a><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a><a href="#" class="social-link"><i class="fab fa-youtube"></i></a></div>
       </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2025 Momentos. All rights reserved.</p></div>
+    <div class="footer-bottom"><p>&copy; 2026 Momentos. All rights reserved.</p></div>
   </div></footer>
   <div class="float-btns">
     <a href="https://wa.me/17868266446" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>

@@ -9,11 +9,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <meta name="theme-color" content="#00b8e6">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/png" href="../icons/icon-192.png">
+  <link rel="apple-touch-icon" href="../icons/icon-192.png">
 </head>
 <body>
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span> Moment<span class="accent">os</span></a>
+      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span><span class="logo-text">Moment<span class="accent">os</span></span></a>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link active">Home</a></li>
         <li><a href="rooms.html" class="nav-link">Rooms</a></li>
@@ -25,9 +29,10 @@
           <a href="../index.html" class="lang-btn"><span class="flag-es"></span> ES</a>
           <a href="index.html" class="lang-btn active"><span class="flag-us"></span> EN</a>
         </div>
-        <a href="https://wa.me/17868266446" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <button type="button" class="nav-app" data-install aria-label="Download App"><i class="fas fa-download"></i><span>Download App</span></button>
+        <a href="https://wa.me/17868266446" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
-      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <section class="hero">
@@ -64,6 +69,9 @@
         <div class="amenity-card" data-aos="fade-up" data-aos-delay="250"><div class="amenity-icon"><i class="fas fa-circle"></i></div><h3>Billiard Table</h3><p>Fun and competition at our billiard table.</p></div>
         <div class="amenity-card" data-aos="fade-up" data-aos-delay="300"><div class="amenity-icon"><i class="fas fa-concierge-bell"></i></div><h3>Room Service</h3><p>Personalized attention whenever you need it.</p></div>
       </div>
+      <a class="spa-banner" href="services.html#spa" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1000&q=80" alt="Spa Momentos" loading="lazy" onerror="this.style.display='none'">
+        <div class="spa-in"><span class="section-tag"><i class="fas fa-spa"></i> Spa</span><h3>Unwind in our <span class="gradient-text">Spa</span></h3><p>Aromas, calm and wellbeing. The gift your body has been waiting for.</p><span class="btn btn-coral">Discover the Spa <i class="fas fa-arrow-right"></i></span></div></a>
+    
     </div>
   </section>
   <section class="rooms">
@@ -101,6 +109,11 @@
       </div>
     </div>
   </section>
+  <section class="app-strip"><div class="container"><div class="app-card" data-aos="fade-up">
+      <div class="app-ico"><i class="fas fa-mobile-screen-button"></i></div>
+      <div class="app-txt"><h2>Take <span class="gradient-text">Momentos</span> on your phone</h2><p>Install our app and book, message or call in one tap.</p></div>
+      <button type="button" class="btn btn-coral btn-lg" data-install><i class="fas fa-download"></i><span>Download App</span></button>
+    </div></div></section>
   <section class="cta-banner">
     <div class="container">
       <div class="cta-content" data-aos="zoom-in">
@@ -113,9 +126,9 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <div><a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span> Moment<span class="accent">os</span></a><p class="footer-slogan">Live moments that stay with you.</p></div>
+        <div><a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span><span class="logo-text">Moment<span class="accent">os</span></span></a><p class="footer-slogan">Live moments that stay with you.</p></div>
         <div><h4>Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="rooms.html">Rooms</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div><h4>Services</h4><ul><li>Pool</li><li>Meals & Drinks</li><li>Billiards</li><li>Room service</li></ul></div>
+        <div><h4>Services</h4><ul><li><a href="services.html#bar">Pool Bar</a></li><li><a href="services.html#food">Cuban Food</a></li><li><a href="services.html#pool">Bar · Billiards · Pool</a></li><li><a href="services.html#sound">Sound</a></li><li><a href="services.html#tv">TV</a></li><li><a href="services.html#wifi">WiFi</a></li><li><a href="services.html#spa">Spa</a></li></ul></div>
         <div class="footer-contact"><h4>Contact</h4><p><i class="fab fa-whatsapp"></i> +1 (786) 826-6446</p><p><i class="fas fa-mobile-alt"></i> +53 55090405</p><p><i class="fas fa-envelope"></i> momentos@gmail.com</p>
           <div class="social-links" style="margin-top:14px;">
             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -125,7 +138,7 @@
           </div>
         </div>
       </div>
-      <div class="footer-bottom"><p>&copy; 2025 Momentos. All rights reserved.</p></div>
+      <div class="footer-bottom"><p>&copy; 2026 Momentos. All rights reserved.</p></div>
     </div>
   </footer>
   <div class="float-btns">

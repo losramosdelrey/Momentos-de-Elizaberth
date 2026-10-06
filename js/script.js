@@ -1,5 +1,5 @@
 /* Momentos — Interactive */
-AOS.init({ duration:800, easing:'ease-out-cubic', once:true, offset:60 });
+if (window.AOS) AOS.init({ duration:800, easing:'ease-out-cubic', once:true, offset:60 });
 
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
@@ -83,4 +83,30 @@ console.log('%c🏠 Momentos', 'font-size:22px;font-weight:bold;color:#0d9488;')
       c.style.setProperty('--my', e.clientY - r.top + 'px');
     })
   );
+})();
+
+// ===== App instalable (PWA) =====
+(function () {
+  const root = new URL('../', document.currentScript ? document.currentScript.src : location.href);
+  const en = document.documentElement.lang === 'en';
+  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+    navigator.serviceWorker.register(new URL('sw.js', root)).catch(() => {});
+  }
+  let deferred = null;
+  addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferred = e; });
+  addEventListener('appinstalled', () => { deferred = null; });
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const help = () => {
+    const m = document.createElement('div');
+    m.className = 'install-modal';
+    const steps = isIOS
+      ? (en ? 'Tap <b>Share</b> <i class="fas fa-arrow-up-from-bracket"></i> and choose <b>Add to Home Screen</b>.' : 'Toca <b>Compartir</b> <i class="fas fa-arrow-up-from-bracket"></i> y elige <b>Añadir a pantalla de inicio</b>.')
+      : (en ? 'Open your browser menu (<b>⋮</b>) and choose <b>Install app</b> or <b>Add to Home screen</b>.' : 'Abre el menú del navegador (<b>⋮</b>) y elige <b>Instalar aplicación</b> o <b>Añadir a pantalla de inicio</b>.');
+    m.innerHTML = `<div class="install-box" role="dialog" aria-modal="true"><h3>${en ? 'Install Momentos' : 'Instalar Momentos'}</h3><p>${steps}</p><button class="btn btn-primary" type="button">${en ? 'Got it' : 'Entendido'}</button></div>`;
+    m.addEventListener('click', (ev) => { if (ev.target === m || ev.target.closest('button')) m.remove(); });
+    document.body.appendChild(m);
+  };
+  document.querySelectorAll('[data-install]').forEach((b) => b.addEventListener('click', async () => {
+    if (deferred) { deferred.prompt(); await deferred.userChoice; deferred = null; } else { help(); }
+  }));
 })();

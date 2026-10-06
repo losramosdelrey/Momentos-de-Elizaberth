@@ -9,11 +9,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <meta name="theme-color" content="#00b8e6">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
 </head>
 <body>
   <nav class="navbar scrolled" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span> Moment<span class="accent">os</span></a>
+      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span><span class="logo-text">Moment<span class="accent">os</span></span></a>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link">Inicio</a></li>
         <li><a href="habitaciones.html" class="nav-link">Habitaciones</a></li>
@@ -25,9 +29,10 @@
           <a href="contacto.html" class="lang-btn active"><span class="flag-es"></span> ES</a>
           <a href="en/contact.html" class="lang-btn"><span class="flag-us"></span> EN</a>
         </div>
-        <a href="https://wa.me/17868266446" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <button type="button" class="nav-app" data-install aria-label="Descargar App"><i class="fas fa-download"></i><span>Descargar App</span></button>
+        <a href="https://wa.me/17868266446" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
-      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
@@ -68,17 +73,18 @@
         </form>
       </div>
       <div class="map-wrap" data-aos="fade-up">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656756.8!2d-82.5!3d22.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2fd2b5c8e9e0d%3A0x0!2sCuba!5e0!3m2!1ses!2sus!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Momentos"></iframe>
+        <iframe src="https://www.google.com/maps?q=C77R%2B4VX&hl=es&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Momentos"></iframe>
       </div>
+      <p style="text-align:center;margin-top:20px;"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=C77R%2B4VX"><i class="fas fa-location-dot"></i> Cómo llegar (C77R+4VX)</a></p>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <div><a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span> Moment<span class="accent">os</span></a><p class="footer-slogan">Vive momentos que se quedan contigo.</p></div>
+        <div><a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span><span class="logo-text">Moment<span class="accent">os</span></span></a><p class="footer-slogan">Vive momentos que se quedan contigo.</p></div>
         <div><h4>Enlaces</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="habitaciones.html">Habitaciones</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
-        <div><h4>Servicios</h4><ul><li>Piscina</li><li>Comidas & Bebidas</li><li>Billar</li><li>Servicio de habitaciones</li></ul></div>
+        <div><h4>Servicios</h4><ul><li><a href="servicios.html#bar">Bar-Piscina</a></li><li><a href="servicios.html#food">Comida Cubana</a></li><li><a href="servicios.html#pool">Barra · Billar · Pool</a></li><li><a href="servicios.html#sound">Sonido</a></li><li><a href="servicios.html#tv">TV</a></li><li><a href="servicios.html#wifi">WiFi</a></li><li><a href="servicios.html#spa">Spa</a></li></ul></div>
         <div class="footer-contact"><h4>Contacto</h4><p><i class="fab fa-whatsapp"></i> +1 (786) 826-6446</p><p><i class="fas fa-mobile-alt"></i> +53 55090405</p><p><i class="fas fa-envelope"></i> momentos@gmail.com</p>
           <div class="social-links" style="margin-top:14px;">
             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -88,7 +94,7 @@
           </div>
         </div>
       </div>
-      <div class="footer-bottom"><p>&copy; 2025 Momentos. Todos los derechos reservados.</p></div>
+      <div class="footer-bottom"><p>&copy; 2026 Momentos. Todos los derechos reservados.</p></div>
     </div>
   </footer>
   <div class="float-btns">

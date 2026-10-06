@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Momentos services: pool, meals, drinks, A/C, hot and cold water, billiards and room service.">
+  <meta name="description" content="Momentos services: pool bar, Cuban food, bar-billiards-pool, sound, TV, WiFi and spa. Live a complete experience.">
   <title>Services | Momentos</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <meta name="theme-color" content="#00b8e6">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/png" href="../icons/icon-192.png">
+  <link rel="apple-touch-icon" href="../icons/icon-192.png">
 </head>
 <body>
   <nav class="navbar scrolled" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span> Moment<span class="accent">os</span></a>
+      <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span><span class="logo-text">Moment<span class="accent">os</span></span></a>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="rooms.html" class="nav-link">Rooms</a></li>
@@ -24,43 +28,55 @@
           <a href="../servicios.html" class="lang-btn"><span class="flag-es"></span> ES</a>
           <a href="services.html" class="lang-btn active"><span class="flag-us"></span> EN</a>
         </div>
-        <a href="https://wa.me/17868266446" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <button type="button" class="nav-app" data-install aria-label="Download App"><i class="fas fa-download"></i><span>Download App</span></button>
+        <a href="https://wa.me/17868266446" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
-      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
-  <section class="amenities" style="padding-top:140px;">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Services</span>
-        <h2 class="section-title">All included in your <span class="gradient-text">experience</span></h2>
-        <p class="section-desc">Amenities designed so you only worry about enjoying yourself.</p>
-      </div>
-      <div class="amenities-grid">
-        <div class="amenity-card" data-aos="fade-up"><div class="amenity-icon"><i class="fas fa-swimming-pool"></i></div><h3>Pool</h3><p>Relax under the sun or cool off whenever you want.</p></div>
-        <div class="amenity-card" data-aos="fade-up" data-aos-delay="50"><div class="amenity-icon"><i class="fas fa-utensils"></i></div><h3>Meals</h3><p>Home-cooked dishes and varied options. Ask about the daily menu.</p></div>
-        <div class="amenity-card" data-aos="fade-up" data-aos-delay="100"><div class="amenity-icon"><i class="fas fa-glass-cheers"></i></div><h3>Drinks</h3><p>Soft drinks, juices and special beverages for your stay.</p></div>
-        <div class="amenity-card" data-aos="fade-up" data-aos-delay="150"><div class="amenity-icon"><i class="fas fa-snowflake"></i></div><h3>Air Conditioning</h3><p>Perfect temperature in every room, day and night.</p></div>
-        <div class="amenity-card" data-aos="fade-up" data-aos-delay="200"><div class="amenity-icon"><i class="fas fa-shower"></i></div><h3>Hot & Cold Water</h3><p>Full bathroom with water at your preferred temperature.</p></div>
-        <div class="amenity-card" data-aos="fade-up" data-aos-delay="250"><div class="amenity-icon"><i class="fas fa-circle"></i></div><h3>Billiard Table</h3><p>Leisure area with billiard table for entertainment.</p></div>
-        <div class="amenity-card" data-aos="fade-up" data-aos-delay="300"><div class="amenity-icon"><i class="fas fa-concierge-bell"></i></div><h3>Room Service</h3><p>Personalized attention: what you need, when you need it.</p></div>
-      </div>
-    </div>
-  </section>
-  <section class="cta-banner"><div class="container"><div class="cta-content" data-aos="zoom-in">
-    <h2>Want to know more?</h2><p>Contact us and we’ll share all the details for your next stay.</p>
-    <a href="contact.html" class="btn btn-coral btn-lg">Go to Contact <i class="fas fa-arrow-right"></i></a>
-  </div></div></section>
+  <section class="amenities services-page" style="padding-top:140px;"><div class="container">
+      <div class="section-header" data-aos="fade-up"><span class="section-tag">Services</span><h1 class="section-title">Everything for <span class="gradient-text">unforgettable moments</span></h1><p class="section-desc">Pool, Cuban flavor, games, music, relaxation and connection. One place, a complete experience.</p></div>
+      <nav class="svc-pills" aria-label="Services"><a href="#bar" class="svc-pill"><i class="fas fa-swimming-pool"></i> Pool Bar</a><a href="#food" class="svc-pill"><i class="fas fa-utensils"></i> Cuban Food</a><a href="#pool" class="svc-pill"><i class="fas fa-bullseye"></i> Bar · Billiards · Pool</a><a href="#sound" class="svc-pill"><i class="fas fa-music"></i> Sound</a><a href="#tv" class="svc-pill"><i class="fas fa-tv"></i> TV</a><a href="#wifi" class="svc-pill"><i class="fas fa-wifi"></i> WiFi</a><a href="#spa" class="svc-pill"><i class="fas fa-spa"></i> Spa</a></nav>
+      <article class="svc-row" id="bar">
+        <div class="svc-media" data-aos="fade-right"><i class="fas fa-swimming-pool svc-ph"></i><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1000&q=80" alt="Pool Bar - Momentos" loading="lazy" onerror="this.style.display='none'"><span class="svc-badge"><i class="fas fa-swimming-pool"></i> Pool Bar</span></div>
+        <div class="svc-text" data-aos="fade-left"><span class="section-tag">01</span><h2 class="section-title">Cheers with your feet in the water</h2><p>Cocktail in hand, sun on your skin and the most refreshing water within reach. Our pool bar is the heart of Momentos: the best afternoons start here and the best stories end here.</p><ul class="about-list"><li><i class="fas fa-check-circle"></i> Cold drinks and cocktails</li><li><i class="fas fa-check-circle"></i> Pool to unwind</li><li><i class="fas fa-check-circle"></i> Party or chill vibes</li></ul>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/17868266446?text=Hello%20Momentos,%20I'd%20like%20information%20about%20Pool%20Bar"><i class="fab fa-whatsapp"></i> Book this service</a></div></article><article class="svc-row rev" id="food">
+        <div class="svc-media" data-aos="fade-left"><i class="fas fa-utensils svc-ph"></i><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=1000&q=80" alt="Cuban Food - Momentos" loading="lazy" onerror="this.style.display='none'"><span class="svc-badge"><i class="fas fa-utensils"></i> Cuban Food</span></div>
+        <div class="svc-text" data-aos="fade-right"><span class="section-tag">02</span><h2 class="section-title">The taste of Cuba, home-cooked</h2><p>Rice, beans, roast meat, tostones and that creole touch you won't forget. Authentic, generous cooking made with love, just like grandma's. Be ready: you'll want seconds.</p><ul class="about-list"><li><i class="fas fa-check-circle"></i> Home-style creole dishes</li><li><i class="fas fa-check-circle"></i> Varied menu at your disposal</li><li><i class="fas fa-check-circle"></i> First-class Cuban flavor</li></ul>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/17868266446?text=Hello%20Momentos,%20I'd%20like%20information%20about%20Cuban%20Food"><i class="fab fa-whatsapp"></i> Book this service</a></div></article><article class="svc-row" id="pool">
+        <div class="svc-media" data-aos="fade-right"><i class="fas fa-bullseye svc-ph"></i><img src="https://images.unsplash.com/photo-1611068813580-b07ef920964b?w=1000&q=80" alt="Bar · Billiards · Pool - Momentos" loading="lazy" onerror="this.style.display='none'"><span class="svc-badge"><i class="fas fa-bullseye"></i> Bar · Billiards · Pool</span></div>
+        <div class="svc-text" data-aos="fade-left"><span class="section-tag">03</span><h2 class="section-title">Fun is better together</h2><p>Cue in hand, ball in play and a bar ready to keep you company. Challenge your partner, friends or the whole family. Everyone wants a rematch.</p><ul class="about-list"><li><i class="fas fa-check-circle"></i> Billiard / pool table</li><li><i class="fas fa-check-circle"></i> Bar with drinks</li><li><i class="fas fa-check-circle"></i> Challenges and great company</li></ul>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/17868266446?text=Hello%20Momentos,%20I'd%20like%20information%20about%20Bar%20%C2%B7%20Billiards%20%C2%B7%20Pool"><i class="fab fa-whatsapp"></i> Book this service</a></div></article><article class="svc-row rev" id="sound">
+        <div class="svc-media" data-aos="fade-left"><i class="fas fa-music svc-ph"></i><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1000&q=80" alt="Sound - Momentos" loading="lazy" onerror="this.style.display='none'"><span class="svc-badge"><i class="fas fa-music"></i> Sound</span></div>
+        <div class="svc-text" data-aos="fade-right"><span class="section-tag">04</span><h2 class="section-title">Let the music set the rhythm</h2><p>A sound setup designed to feel every song: salsa, reggaeton, ballads or whatever the moment asks for. You choose the soundtrack of your stay.</p><ul class="about-list"><li><i class="fas fa-check-circle"></i> Music for every mood</li><li><i class="fas fa-check-circle"></i> Perfect for celebrations</li><li><i class="fas fa-check-circle"></i> Enjoy without limits</li></ul>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/17868266446?text=Hello%20Momentos,%20I'd%20like%20information%20about%20Sound"><i class="fab fa-whatsapp"></i> Book this service</a></div></article><article class="svc-row" id="tv">
+        <div class="svc-media" data-aos="fade-right"><i class="fas fa-tv svc-ph"></i><img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=1000&q=80" alt="TV - Momentos" loading="lazy" onerror="this.style.display='none'"><span class="svc-badge"><i class="fas fa-tv"></i> TV</span></div>
+        <div class="svc-text" data-aos="fade-left"><span class="section-tag">05</span><h2 class="section-title">Your entertainment, your way</h2><p>Sports, movies or that show you can't miss. Relax with the screen and the comfort of your space, without giving anything up.</p><ul class="about-list"><li><i class="fas fa-check-circle"></i> TV available for you</li><li><i class="fas fa-check-circle"></i> Great for watching together</li><li><i class="fas fa-check-circle"></i> Total relaxation</li></ul>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/17868266446?text=Hello%20Momentos,%20I'd%20like%20information%20about%20TV"><i class="fab fa-whatsapp"></i> Book this service</a></div></article><article class="svc-row rev" id="wifi">
+        <div class="svc-media" data-aos="fade-left"><i class="fas fa-wifi svc-ph"></i><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1000&q=80" alt="WiFi - Momentos" loading="lazy" onerror="this.style.display='none'"><span class="svc-badge"><i class="fas fa-wifi"></i> WiFi</span></div>
+        <div class="svc-text" data-aos="fade-right"><span class="section-tag">06</span><h2 class="section-title">Always connected to what matters</h2><p>Share your trip, get some work done or call your loved ones. WiFi so you stay up to date without losing a minute of relaxation.</p><ul class="about-list"><li><i class="fas fa-check-circle"></i> Wireless connection</li><li><i class="fas fa-check-circle"></i> For you and your companions</li><li><i class="fas fa-check-circle"></i> Work or share your photos</li></ul>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/17868266446?text=Hello%20Momentos,%20I'd%20like%20information%20about%20WiFi"><i class="fab fa-whatsapp"></i> Book this service</a></div></article><article class="svc-row" id="spa">
+        <div class="svc-media" data-aos="fade-right"><i class="fas fa-spa svc-ph"></i><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1000&q=80" alt="Spa - Momentos" loading="lazy" onerror="this.style.display='none'"><span class="svc-badge"><i class="fas fa-spa"></i> Spa</span></div>
+        <div class="svc-text" data-aos="fade-left"><span class="section-tag">07</span><h2 class="section-title">Disconnect. Breathe. Renew</h2><p>Your body asks for it and your mind says thanks. Our spa is an oasis of calm: aromas, serenity and wellbeing so you return to life renewed.</p><ul class="about-list"><li><i class="fas fa-check-circle"></i> Peaceful, relaxing atmosphere</li><li><i class="fas fa-check-circle"></i> Care for body and mind</li><li><i class="fas fa-check-circle"></i> The perfect end to your day</li></ul>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/17868266446?text=Hello%20Momentos,%20I'd%20like%20information%20about%20Spa"><i class="fab fa-whatsapp"></i> Book this service</a></div></article>
+    </div></section>
+  <section class="app-strip"><div class="container"><div class="app-card" data-aos="fade-up">
+      <div class="app-ico"><i class="fas fa-mobile-screen-button"></i></div>
+      <div class="app-txt"><h2>Take <span class="gradient-text">Momentos</span> on your phone</h2><p>Install our app and book, message or call in one tap.</p></div>
+      <button type="button" class="btn btn-coral btn-lg" data-install><i class="fas fa-download"></i><span>Download App</span></button>
+    </div></div></section>
+  <section class="cta-banner"><div class="container"><div class="cta-content" data-aos="zoom-in"><h2>What will your next moment be?</h2><p>Message us on WhatsApp and we'll help you build your ideal stay.</p>
+    <a href="https://wa.me/17868266446" target="_blank" rel="noopener" class="btn btn-coral btn-lg"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a></div></div></section>
   <footer class="footer"><div class="container">
     <div class="footer-content">
-      <div><a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span> Moment<span class="accent">os</span></a><p class="footer-slogan">Live moments that stay with you.</p></div>
+      <div><a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-home"></i></span><span class="logo-text">Moment<span class="accent">os</span></span></a><p class="footer-slogan">Live moments that stay with you.</p></div>
       <div><h4>Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="rooms.html">Rooms</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h4>Services</h4><ul><li>Pool</li><li>Meals & Drinks</li><li>Billiards</li><li>Room service</li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="services.html#bar">Pool Bar</a></li><li><a href="services.html#food">Cuban Food</a></li><li><a href="services.html#pool">Bar · Billiards · Pool</a></li><li><a href="services.html#sound">Sound</a></li><li><a href="services.html#tv">TV</a></li><li><a href="services.html#wifi">WiFi</a></li><li><a href="services.html#spa">Spa</a></li></ul></div>
       <div class="footer-contact"><h4>Contact</h4><p><i class="fab fa-whatsapp"></i> +1 (786) 826-6446</p><p><i class="fas fa-mobile-alt"></i> +53 55090405</p><p><i class="fas fa-envelope"></i> momentos@gmail.com</p>
         <div class="social-links" style="margin-top:14px;"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fab fa-instagram"></i></a><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a><a href="#" class="social-link"><i class="fab fa-youtube"></i></a></div>
       </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2025 Momentos. All rights reserved.</p></div>
+    <div class="footer-bottom"><p>&copy; 2026 Momentos. All rights reserved.</p></div>
   </div></footer>
   <div class="float-btns">
     <a href="https://wa.me/17868266446" target="_blank" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
