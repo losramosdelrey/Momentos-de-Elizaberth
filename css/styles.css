@@ -792,3 +792,13 @@ button.float-call { border:0; padding:0; cursor:pointer; font-family:inherit; }
 @media (max-width:1024px) { .booking-form { grid-template-columns:repeat(2,minmax(0,1fr)); } .booking-form .btn { grid-column:1/-1; } }
 @media (max-width:900px) { .seo-grid { grid-template-columns:1fr; } }
 @media (max-width:480px) { .booking-form { grid-template-columns:1fr; padding:18px; } .booking-form .btn { max-width:none; width:100%; } .booking, .seo-block, .testimonials, .home-map { padding:56px 0; } }
+
+/* Performance: evitar CLS en imágenes de contenido */
+img { max-width: 100%; height: auto; }
+.spa-banner img, .about-img img, .room-img img, .svc-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: #e0f4fc;
+}

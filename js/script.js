@@ -1,5 +1,12 @@
 /* Momentos — Interactive */
-if (window.AOS) AOS.init({ duration:800, easing:'ease-out-cubic', once:true, offset:60 });
+(function () {
+  if (!window.AOS) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('[data-aos]').forEach(function (el) { el.removeAttribute('data-aos'); });
+    return;
+  }
+  AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 48 });
+})();
 
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');

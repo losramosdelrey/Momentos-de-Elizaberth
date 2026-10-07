@@ -66,3 +66,14 @@ Se añadieron textos amables y orientados a conversión en **todos los botones d
 
 Versión en inglés con el mismo tono.  
 Al hacer clic, WhatsApp se abre con el texto ya escrito listo para enviar.
+
+## Parche rendimiento (Oct 2026) — listo para GitHub Pages
+
+- **AOS CSS** diferido (`media="print" onload`) en todas las páginas ES/EN.
+- **AOS JS**: respeta `prefers-reduced-motion` (desactiva animaciones si el usuario lo pide).
+- **Dimensiones** `width`/`height` en todas las `<img>` (incluye Unsplash y avatares).
+- **CSS** `aspect-ratio: 3/2` + `object-fit: cover` en imágenes de contenido → menos CLS.
+- **dns-prefetch** a `unpkg.com`.
+- Fuentes y Font Awesome ya diferían; AOS ahora también.
+
+Siguiente salto a ≥90 móvil: sustituir Unsplash por WebP locales propios.
