@@ -43,3 +43,11 @@ sw.js        → service worker
 manifest.json
 sitemap.xml / robots.txt
 ```
+
+## Pendientes manuales (no se pueden hacer desde el código)
+
+1. **Testimonios**: sección `id="opiniones"` **activada** con 4 opiniones (3 con fotos reales del ZIP + 1 generada). Si tienes permisos escritos de huéspedes, sustituye los textos por los literales de WhatsApp/reseñas.
+2. **Google Business Profile** (gratis): crea la ficha en https://business.google.com con el nombre «Momentos», categoría de alojamiento, dirección/ubicación (22.413028, -83.707778), teléfonos y fotos. Después añade la URL de la ficha a `sameAs` en el JSON-LD de `index.html` y enlázala junto al mapa.
+3. **Google Search Console**: https://search.google.com/search-console → «Añadir propiedad» → *Prefijo de URL* → `https://losramosdelrey.github.io/Momentos-de-Elizaberth/` → verifica (etiqueta HTML en `<head>` de `index.html`) → en «Sitemaps» envía `sitemap.xml`.
+4. **PageSpeed Insights** (móvil ≥ 90): mide en https://pagespeed.web.dev con la URL publicada. Prioridad: sustituir Unsplash por WebP locales (≤1600 px), hostear fuentes o usar `font-display: swap` (ya parcial), diferir AOS/Font Awesome si el score lo pide.
+5. **Fotos reales**: sustituir las de Unsplash por fotos propias de la casa y habitaciones (WebP).

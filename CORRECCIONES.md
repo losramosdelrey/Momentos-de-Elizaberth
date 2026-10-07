@@ -32,12 +32,22 @@
 - `.price-note`
 - Estilos para desactivar visualmente enlaces vacíos
 
+## Actualización — Opiniones + conversión (Oct 2026)
+
+- Sección **Opiniones de huéspedes** visible en ES y EN con 4 testimonios (fotos reales del ZIP + 1 texto generado).
+- Enlace a Google Maps / ficha junto a las opiniones y al mapa incrustado.
+- Textos SEO más descriptivos: «casa de renta en Pinar del Río», «hospedaje con piscina», reserva por fechas → WhatsApp.
+- CSS de avatares de testimonio optimizado para móvil (Android / iPhone).
+- Selector de fechas + huéspedes + habitación ya arma el mensaje de WhatsApp (sin ida y vuelta extra).
+- Botón de llamada: solo número Cuba (+53); internacional vía WhatsApp +1 con código de país visible.
+
 ## Pendiente (recomendaciones para el propietario)
-1. Sustituir imágenes de Unsplash por **fotografías reales** de la casa y las habitaciones.
+1. Sustituir imágenes de Unsplash por **fotografías reales** de la casa y las habitaciones (mejora PageSpeed móvil).
 2. Publicar precios orientativos (“desde X CUP/USD”) cuando estén definidos.
-3. Crear y vincular perfiles reales de Instagram / Facebook.
-4. Considerar dominio propio para evitar problemas de mayúsculas/minúsculas en la URL.
-5. Añadir testimonios de huéspedes cuando estén disponibles.
+3. Crear **Google Business Profile** y vincular la URL en el sitio (sameAs + botón).
+4. Registrar el sitio en **Google Search Console** y enviar `sitemap.xml`.
+5. Crear y vincular perfiles reales de Instagram / Facebook.
+6. Considerar dominio propio para evitar problemas de mayúsculas/minúsculas en la URL de GitHub Pages.
 
 ---
 Correcciones realizadas como diseñador web profesional a partir de la auditoría de octubre 2026.

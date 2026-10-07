@@ -112,3 +112,45 @@ console.log('%c🏠 Momentos', 'font-size:22px;font-weight:bold;color:#0d9488;')
     if (deferred) { deferred.prompt(); await deferred.userChoice; deferred = null; } else { help(); }
   }));
 })();
+
+// ===== Reserva por fechas → WhatsApp =====
+(function () {
+  const f = document.querySelector('[data-booking]');
+  if (!f) return;
+  const en = document.documentElement.lang === 'en';
+  const inp = f.querySelector('[name=in]'), out = f.querySelector('[name=out]');
+  const guests = f.querySelector('[name=guests]'), room = f.querySelector('[name=room]');
+  const err = f.querySelector('.booking-error');
+  const iso = (d) => new Date(d.getTime() - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+  const parse = (s) => new Date(s + 'T00:00:00');
+  const fmt = (s) => parse(s).toLocaleDateString(en ? 'en-US' : 'es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+  inp.min = iso(new Date());
+  inp.addEventListener('change', () => {
+    if (!inp.value) return;
+    const n = parse(inp.value); n.setDate(n.getDate() + 1);
+    out.min = iso(n);
+    if (out.value && out.value <= inp.value) out.value = '';
+  });
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!inp.value || !out.value) { err.textContent = en ? 'Please choose your check-in and check-out dates.' : 'Elige las fechas de llegada y salida.'; return; }
+    if (out.value <= inp.value) { err.textContent = en ? 'Check-out must be after check-in.' : 'La salida debe ser posterior a la llegada.'; return; }
+    err.textContent = '';
+    const nights = Math.round((parse(out.value) - parse(inp.value)) / 864e5);
+    const g = guests.value, r = room.value;
+    const text = en
+      ? `Hello Momentos! 👋 I'd like to check availability:\n\n📅 Check-in: ${fmt(inp.value)}\n📅 Check-out: ${fmt(out.value)} (${nights} night${nights > 1 ? 's' : ''})\n👥 Guests: ${g}${r ? `\n🛏️ Room: ${r}` : ''}\n\nCould you tell me the rate and availability? Thank you!`
+      : `¡Hola Momentos! 👋 Quisiera consultar disponibilidad:\n\n📅 Llegada: ${fmt(inp.value)}\n📅 Salida: ${fmt(out.value)} (${nights} noche${nights > 1 ? 's' : ''})\n👥 Huéspedes: ${g}${r ? `\n🛏️ Habitación: ${r}` : ''}\n\n¿Me pueden indicar precio y disponibilidad? ¡Gracias!`;
+    window.open('https://wa.me/17868266446?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  });
+})();
+
+// ===== Menú de llamada (Cuba / internacional) =====
+(function () {
+  const btn = document.getElementById('call-toggle'), menu = document.getElementById('call-menu');
+  if (!btn || !menu) return;
+  const set = (open) => { menu.hidden = !open; btn.setAttribute('aria-expanded', String(open)); };
+  btn.addEventListener('click', (e) => { e.stopPropagation(); set(menu.hidden); });
+  document.addEventListener('click', (e) => { if (!menu.contains(e.target)) set(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+})();
