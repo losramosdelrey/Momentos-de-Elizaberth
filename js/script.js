@@ -38,7 +38,7 @@ if (form) {
     const phone = document.getElementById('phone')?.value || '';
     const msg = document.getElementById('message')?.value || '';
     const en = document.documentElement.lang === 'en';
-    let text = en ? `Hello Momentos! 👋\n\n*Name:* ${name}\n*Email:* ${email}` : `Hola Momentos! 👋\n\n*Nombre:* ${name}\n*Email:* ${email}`;
+    let text = en ? `Hello Momentos! 👋\n\n*Name:* ${name}\n*Email:* ${email}` : `¡Hola Momentos! ✨\n\nLlego desde su sitio web y me gustaría contactarlos.\n\n*Nombre:* ${name}\n*Email:* ${email}`;
     if (phone) text += `\n*${en ? 'Phone' : 'Teléfono'}:* ${phone}`;
     text += `\n\n*${en ? 'Message' : 'Mensaje'}:*\n${msg}`;
     window.open(`https://wa.me/17868266446?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
