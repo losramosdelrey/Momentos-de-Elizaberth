@@ -720,3 +720,22 @@ button { border:none; background:none; cursor:pointer; font-family:inherit; }
 @media (max-width: 480px) {
   .nav-actions { gap: 6px; }
 }
+
+/* ===== Ajustes iPhone / Safari iOS ===== */
+html { -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+a, button { -webkit-tap-highlight-color:rgba(0,184,230,.18); }
+.navbar.scrolled, .nav-links, .install-modal, .hero-stats-card { -webkit-backdrop-filter:blur(14px); }
+.form-group input, .form-group textarea, .form-group select { -webkit-appearance:none; border-radius:12px; }
+/* Altura real en Safari (la barra de direcciones ya no recorta el hero ni el menú) */
+@supports (height:100svh) { .hero { min-height:100svh; } }
+@media (max-width:768px) {
+  @supports (height:100dvh) { .nav-links { height:100dvh; } }
+  .nav-links { padding-bottom:calc(40px + env(safe-area-inset-bottom,0px)); overflow-y:auto; -webkit-overflow-scrolling:touch; }
+  .hamburger { width:44px; height:44px; padding:9px 9px; justify-content:center; box-sizing:border-box; }
+}
+/* Zonas seguras: notch en horizontal y barra inferior */
+.nav-container { padding-left:max(24px, env(safe-area-inset-left,0px)); padding-right:max(24px, env(safe-area-inset-right,0px)); }
+@media (max-width:768px) { .nav-container { padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px)); } }
+.float-btns { bottom:calc(24px + env(safe-area-inset-bottom,0px)); right:calc(24px + env(safe-area-inset-right,0px)); }
+@media (max-width:480px) { .float-btns { bottom:calc(16px + env(safe-area-inset-bottom,0px)); right:calc(16px + env(safe-area-inset-right,0px)); } }
+.footer-bottom { padding-bottom:calc(8px + env(safe-area-inset-bottom,0px)); }

@@ -1,4 +1,4 @@
-const CACHE = 'momentos-v2';
+const CACHE = 'momentos-v3';
 const CDN = /(images\.unsplash\.com|cdnjs\.cloudflare\.com|fonts\.googleapis\.com|fonts\.gstatic\.com|unpkg\.com)$/;
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', (e) => {
