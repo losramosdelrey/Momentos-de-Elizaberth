@@ -6,13 +6,10 @@
   <meta name="description" content="Room rental house in Pinar del Río, Cuba: air-conditioned rooms, pool, billiards, Cuban food and spa. Ask for dates on WhatsApp.">
   <title>Room Rental in Pinar del Río, Cuba, with Pool | Momentos</title>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="dns-prefetch" href="https://unpkg.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"></noscript>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+  <link rel="preload" as="font" type="font/woff2" href="../libs/fonts/outfit-latin-wght-normal.woff2" crossorigin>
+  <link rel="stylesheet" href="../libs/fonts/fonts.css">
+  <link rel="stylesheet" href="../libs/fontawesome/css/fa-subset.css">
+  <link rel="stylesheet" href="../libs/aos/aos.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="../libs/aos/aos.css"></noscript>
   <link rel="preload" as="image" href="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1400&q=75&auto=format" fetchpriority="high">
   <link rel="stylesheet" href="../css/styles.css">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -218,13 +215,13 @@
       </ul>
       <div class="nav-actions">
         <div class="lang-switcher">
-          <a href="../index.html" class="lang-btn"><span class="flag-es"></span> ES</a>
+          <a href="../" class="lang-btn"><span class="flag-es"></span> ES</a>
           <a href="index.html" class="lang-btn active"><span class="flag-us"></span> EN</a>
         </div>
         <button type="button" class="nav-app" data-install aria-label="Download App"><i class="fas fa-download"></i><span>Download App</span></button>
         <a href="https://wa.me/17868266446?text=Hi%20Momentos%21%20%F0%9F%91%8B%20I%27d%20love%20to%20learn%20more%20about%20your%20rental%20home.%20Can%20you%20help%20me%20plan%20an%20unforgettable%20stay%3F" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <section id="main-content" class="hero">
@@ -343,12 +340,13 @@
     </div>
   </section>
 
+  <!-- TODO (owner): replace these texts with verbatim guest reviews, with their permission. -->
   <section class="testimonials" id="opiniones">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">Guest reviews</span>
         <h2 class="section-title">What our <span class="gradient-text">guests say</span></h2>
-        <p class="section-desc">Real experiences at our room rental in Pinar del Río — the strongest decision factor when choosing lodging.</p>
+        <p class="section-desc">What guests value most about staying at our room rental in Pinar del Río.</p>
       </div>
       <div class="t-grid">
         <figure class="panel t-card" data-aos="fade-up" data-aos-delay="50">
@@ -444,7 +442,7 @@
     </div>
     <button class="float-btn float-top" id="back-top"><i class="fas fa-chevron-up"></i></button>
   </div>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="../libs/aos/aos.js" defer></script>
   <script src="../js/script.js" defer></script>
 </body>
 </html>

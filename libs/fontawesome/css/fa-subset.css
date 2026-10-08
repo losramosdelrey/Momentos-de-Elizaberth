@@ -1,0 +1,34 @@
+/* Font Awesome Free 6.5.1 — subconjunto de los iconos usados en el sitio.
+   Iconos CC BY 4.0 · Fuentes SIL OFL 1.1 · Código MIT — https://fontawesome.com/license/free */
+.fa{font-family:var(--fa-style-family,"Font Awesome 6 Free");font-weight:var(--fa-style,900)}
+.fa,.fa-brands,.fa-classic,.fa-regular,.fa-sharp,.fa-solid,.fab,.far,.fas{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:var(--fa-display,inline-block);font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fa-classic,.fa-regular,.fa-solid,.far,.fas{font-family:"Font Awesome 6 Free"}
+.fa-brands,.fab{font-family:"Font Awesome 6 Brands"}
+.fa-chevron-up:before{content:"\f077"}
+.fa-bullseye:before{content:"\f140"}
+.fa-arrow-up-from-bracket:before{content:"\e09a"}
+.fa-star:before{content:"\f005"}
+.fa-wifi-3:before,.fa-wifi-strong:before,.fa-wifi:before{content:"\f1eb"}
+.fa-check-circle:before,.fa-circle-check:before{content:"\f058"}
+.fa-spa:before{content:"\f5bb"}
+.fa-arrow-right:before{content:"\f061"}
+.fa-mobile-alt:before,.fa-mobile-screen-button:before{content:"\f3cd"}
+.fa-route:before{content:"\f4d7"}
+.fa-phone:before{content:"\f095"}
+.fa-envelope:before{content:"\f0e0"}
+.fa-download:before{content:"\f019"}
+.fa-home-alt:before,.fa-home-lg-alt:before,.fa-home:before,.fa-house:before{content:"\f015"}
+.fa-cutlery:before,.fa-utensils:before{content:"\f2e7"}
+.fa-bed:before{content:"\f236"}
+.fa-location-dot:before,.fa-map-marker-alt:before{content:"\f3c5"}
+.fa-chevron-down:before{content:"\f078"}
+.fa-television:before,.fa-tv-alt:before,.fa-tv:before{content:"\f26c"}
+.fa-music:before{content:"\f001"}
+.fa-check:before{content:"\f00c"}
+.fa-ladder-water:before,.fa-swimming-pool:before,.fa-water-ladder:before{content:"\f5c5"}
+@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url(../webfonts/fa-brands-400.woff2) format("woff2")}
+.fa-brands,.fab{font-weight:400}
+.fa-whatsapp:before{content:"\f232"}
+.fa-regular,.far{font-weight:400}
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url(../webfonts/fa-solid-900.woff2) format("woff2")}
+.fa-solid,.fas{font-weight:900}

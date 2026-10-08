@@ -5,13 +5,10 @@
   <meta name="description" content="How to get to Momentos in Pinar del Río and how to book: WhatsApp +1 (786) 826-6446, Cuba mobile +53 55090405. Map and directions.">
   <title>Contact and Directions | Momentos, Pinar del Río</title>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="dns-prefetch" href="https://unpkg.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"></noscript>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+  <link rel="preload" as="font" type="font/woff2" href="../libs/fonts/outfit-latin-wght-normal.woff2" crossorigin>
+  <link rel="stylesheet" href="../libs/fonts/fonts.css">
+  <link rel="stylesheet" href="../libs/fontawesome/css/fa-subset.css">
+  <link rel="stylesheet" href="../libs/aos/aos.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="../libs/aos/aos.css"></noscript>
   <link rel="stylesheet" href="../css/styles.css">
     <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
@@ -62,14 +59,14 @@
         <button type="button" class="nav-app" data-install aria-label="Download App"><i class="fas fa-download"></i><span>Download App</span></button>
         <a href="https://wa.me/17868266446?text=Hi%20Momentos%21%20%F0%9F%91%8B%20I%27d%20love%20to%20learn%20more%20about%20your%20rental%20home.%20Can%20you%20help%20me%20plan%20an%20unforgettable%20stay%3F" target="_blank" rel="noopener" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <section id="main-content" class="contact" style="padding-top:140px;">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <span class="section-tag">Contact</span>
-        <h2 class="section-title">We're here to <span class="c-ice">help</span></h2>
+        <h1 class="section-title">We're here to <span class="c-ice">help</span></h1>
         <p class="section-desc">Write, call or book on WhatsApp. We reply fast.</p>
       </div>
       <div class="contact-grid">
@@ -83,7 +80,7 @@
         </div>
         <form class="contact-form" id="contact-form" data-aos="fade-left">
           <div class="form-group"><input type="text" id="name" required placeholder=" "><label for="name">Full name</label></div>
-          <div class="form-group"><input type="email" id="email" required placeholder=" "><label for="email">Email</label></div>
+          <div class="form-group"><input type="email" id="email" placeholder=" "><label for="email">Email (optional)</label></div>
           <div class="form-group"><input type="tel" id="phone" placeholder=" "><label for="phone">Phone (optional)</label></div>
           <div class="form-group"><textarea id="message" rows="4" required placeholder=" "></textarea><label for="message">How can we help?</label></div>
           <button type="submit" class="btn btn-primary btn-full"><span>Send via WhatsApp</span><i class="fab fa-whatsapp"></i></button>
@@ -120,6 +117,6 @@
     </div>
     <button class="float-btn float-top" id="back-top"><i class="fas fa-chevron-up"></i></button>
   </div>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script><script src="../js/script.js" defer></script>
+  <script src="../libs/aos/aos.js" defer></script><script src="../js/script.js" defer></script>
 </body>
 </html>

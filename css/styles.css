@@ -802,3 +802,27 @@ img { max-width: 100%; height: auto; }
   object-fit: cover;
   background: #e0f4fc;
 }
+
+/* ===== Accesibilidad: contraste de texto blanco ≥ 4.5:1 (WCAG AA) =====
+   Los tonos originales (#f97316 / #ea580c / #00b8e6) daban entre 2.3:1 y 3.6:1 con texto blanco.
+   Se oscurecen solo los elementos con texto; el resto del diseño no cambia. */
+.btn-coral,
+.room-badge,
+.nav-app,
+.svc-badge { background: linear-gradient(135deg, #c2410c, #9a3412); color: #fff; }
+.float-top,
+.amenity-card:hover .amenity-icon { background: linear-gradient(135deg, #c2410c, #9a3412); }
+.spa-banner { background: linear-gradient(135deg, var(--navy), #0a6a94 60%, #c2410c); }
+.t-avatar--initials { background: linear-gradient(135deg, #007ba8, #005f87); }
+.btn-coral:hover { box-shadow: 0 12px 32px rgba(154, 52, 18, .45); }
+
+/* Foco visible también sobre fondos claros */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid #033a55; outline-offset: 3px;
+}
+.navbar:not(.scrolled) a:focus-visible, .footer a:focus-visible, .hero a:focus-visible { outline-color: #fff; }
+
+/* Títulos de página sobre fondo aqua: el tono claro (#b5e5fd) daba ~1.7:1; ahora navy (≈5:1) */
+.c-ice { color: #033a55; -webkit-text-fill-color: #033a55; text-shadow: none; }
+/* Logo legible sobre la portada oscura antes de hacer scroll */
+body:has(.hero) .navbar:not(.scrolled) .logo { color: #fff; }

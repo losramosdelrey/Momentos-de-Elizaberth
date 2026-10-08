@@ -1,16 +1,44 @@
-const CACHE = 'momentos-v4';
-const CDN = /(images\.unsplash\.com|cdnjs\.cloudflare\.com|fonts\.googleapis\.com|fonts\.gstatic\.com|unpkg\.com)$/;
-self.addEventListener('install', () => self.skipWaiting());
-self.addEventListener('activate', (e) => {
-  e.waitUntil(caches.keys().then((k) => Promise.all(k.filter((x) => x !== CACHE).map((x) => caches.delete(x)))).then(() => self.clients.claim()));
+// Service worker de Momentos
+const CACHE = 'momentos-v5';
+const OFFLINE = 'offline.html';
+const NET_TIMEOUT = 3000; // ms: con conexión lenta se usa la copia guardada
+
+self.addEventListener('install', (e) => {
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll([OFFLINE])).then(() => self.skipWaiting()));
 });
-const save = (req, res) => { if (res && (res.ok || res.type === 'opaque')) { const c = res.clone(); caches.open(CACHE).then((x) => x.put(req, c)); } return res; };
+
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys()
+      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      .then(() => self.clients.claim())
+  );
+});
+
+const save = (req, res) => {
+  if (res && res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); }
+  return res;
+};
+
+// Red primero con tiempo límite; si falla o tarda, copia en caché; si no hay, página offline
+const networkFirst = (req) => {
+  const net = fetch(req).then((res) => save(req, res));
+  const timeout = new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), NET_TIMEOUT));
+  return Promise.race([net, timeout])
+    .catch(() => caches.match(req).then((hit) => hit || net.catch(() => caches.match(OFFLINE))));
+};
+
+// Caché al instante y actualización en segundo plano
+const staleWhileRevalidate = (req) =>
+  caches.match(req).then((hit) => {
+    const net = fetch(req).then((res) => save(req, res)).catch(() => hit);
+    return hit || net;
+  });
+
 self.addEventListener('fetch', (e) => {
-  const r = e.request, u = new URL(r.url);
+  const r = e.request;
   if (r.method !== 'GET') return;
-  if (r.mode === 'navigate') { // HTML: red primero, caché si no hay conexión
-    e.respondWith(fetch(r).then((res) => save(r, res)).catch(() => caches.match(r)));
-  } else if (u.origin === location.origin || CDN.test(u.hostname)) { // estáticos: caché al instante y actualiza en segundo plano
-    e.respondWith(caches.match(r).then((hit) => { const net = fetch(r).then((res) => save(r, res)).catch(() => hit); return hit || net; }));
-  }
+  const u = new URL(r.url);
+  if (u.origin !== location.origin) return; // sin respuestas opacas de terceros en la caché
+  e.respondWith(r.mode === 'navigate' ? networkFirst(r) : staleWhileRevalidate(r));
 });

@@ -1,0 +1,16 @@
+/* Tipografías alojadas localmente (subconjunto latino: incluye á é í ó ú ñ ¿ ¡).
+   Outfit y Playfair Display — licencia SIL OFL 1.1 (fuente: Fontsource). */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('outfit-latin-wght-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('playfair-display-latin-wght-normal.woff2') format('woff2');
+}

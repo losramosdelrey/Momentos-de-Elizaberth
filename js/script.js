@@ -19,17 +19,16 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-  });
-  navLinks.querySelectorAll('.nav-link').forEach(l => {
-    l.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+  const setMenu = (open) => {
+    hamburger.classList.toggle('active', open);
+    navLinks.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  hamburger.addEventListener('click', () => setMenu(!navLinks.classList.contains('active')));
+  navLinks.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('active')) { setMenu(false); hamburger.focus(); }
   });
 }
 
@@ -45,7 +44,8 @@ if (form) {
     const phone = document.getElementById('phone')?.value || '';
     const msg = document.getElementById('message')?.value || '';
     const en = document.documentElement.lang === 'en';
-    let text = en ? `Hello Momentos! 👋\n\n*Name:* ${name}\n*Email:* ${email}` : `¡Hola Momentos! ✨\n\nLlego desde su sitio web y me gustaría contactarlos.\n\n*Nombre:* ${name}\n*Email:* ${email}`;
+    let text = en ? `Hello Momentos! 👋\n\n*Name:* ${name}` : `¡Hola Momentos! ✨\n\nLlego desde su sitio web y me gustaría contactarlos.\n\n*Nombre:* ${name}`;
+    if (email) text += `\n*Email:* ${email}`;
     if (phone) text += `\n*${en ? 'Phone' : 'Teléfono'}:* ${phone}`;
     text += `\n\n*${en ? 'Message' : 'Mensaje'}:*\n${msg}`;
     window.open(`https://wa.me/17868266446?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
@@ -53,13 +53,11 @@ if (form) {
     const btn = form.querySelector('button[type="submit"]');
     if (btn) {
       const orig = btn.innerHTML;
-      btn.innerHTML = '<i class="fas fa-check"></i> ' + (en ? 'Sent!' : '¡Enviado!');
+      btn.innerHTML = '<i class="fas fa-check"></i> ' + (en ? 'Opening WhatsApp…' : 'Abriendo WhatsApp…');
       setTimeout(() => btn.innerHTML = orig, 2500);
     }
   });
 }
-
-console.log('%c🏠 Momentos', 'font-size:22px;font-weight:bold;color:#0d9488;');
 
 // ===== Efectos: burbujas, barra de progreso, brillo que sigue al cursor =====
 (function () {
@@ -111,9 +109,14 @@ console.log('%c🏠 Momentos', 'font-size:22px;font-weight:bold;color:#0d9488;')
     const steps = isIOS
       ? (en ? 'Tap <b>Share</b> <i class="fas fa-arrow-up-from-bracket"></i> and choose <b>Add to Home Screen</b>.' : 'Toca <b>Compartir</b> <i class="fas fa-arrow-up-from-bracket"></i> y elige <b>Añadir a pantalla de inicio</b>.')
       : (en ? 'Open your browser menu (<b>⋮</b>) and choose <b>Install app</b> or <b>Add to Home screen</b>.' : 'Abre el menú del navegador (<b>⋮</b>) y elige <b>Instalar aplicación</b> o <b>Añadir a pantalla de inicio</b>.');
-    m.innerHTML = `<div class="install-box" role="dialog" aria-modal="true"><h3>${en ? 'Install Momentos' : 'Instalar Momentos'}</h3><p>${steps}</p><button class="btn btn-primary" type="button">${en ? 'Got it' : 'Entendido'}</button></div>`;
-    m.addEventListener('click', (ev) => { if (ev.target === m || ev.target.closest('button')) m.remove(); });
+    m.innerHTML = `<div class="install-box" role="dialog" aria-modal="true" aria-labelledby="install-title"><h3 id="install-title">${en ? 'Install Momentos' : 'Instalar Momentos'}</h3><p>${steps}</p><button class="btn btn-primary" type="button">${en ? 'Got it' : 'Entendido'}</button></div>`;
+    const opener = document.activeElement;
+    const close = () => { m.remove(); document.removeEventListener('keydown', onKey); if (opener && opener.focus) opener.focus(); };
+    const onKey = (ev) => { if (ev.key === 'Escape') close(); };
+    m.addEventListener('click', (ev) => { if (ev.target === m || ev.target.closest('button')) close(); });
+    document.addEventListener('keydown', onKey);
     document.body.appendChild(m);
+    const ok = m.querySelector('button'); if (ok) ok.focus();
   };
   document.querySelectorAll('[data-install]').forEach((b) => b.addEventListener('click', async () => {
     if (deferred) { deferred.prompt(); await deferred.userChoice; deferred = null; } else { help(); }
